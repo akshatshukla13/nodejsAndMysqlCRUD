@@ -25,6 +25,7 @@ const createUser = async (req, res) => {
 
   const createNewUser = await await queryDatabase(
     `INSERT INTO mytestdb.users (userName, rating) VALUES ("${userName}", ${rating});`
+    // await pool.query('INSERT INTO users (userName, rating) VALUES (?, ?)', [userName, rating]);
   );
 
   if (!createNewUser.affectedRows) {
